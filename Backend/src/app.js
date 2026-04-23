@@ -4,7 +4,6 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import { RateLimiterMemory } from "rate-limiter-flexible";
 import { v2 as cloudinary } from "cloudinary";
-import Razorpay from "razorpay";
 import { env } from "./config/env.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
@@ -17,11 +16,6 @@ cloudinary.config({
   cloud_name: env.cloudinaryCloudName,
   api_key: env.cloudinaryApiKey,
   api_secret: env.cloudinaryApiSecret,
-});
-
-export const razorpay = new Razorpay({
-  key_id: env.razorpayKeyId || "rzp_test_key",
-  key_secret: env.razorpayKeySecret || "rzp_test_secret",
 });
 
 const authRateLimiter = new RateLimiterMemory({
