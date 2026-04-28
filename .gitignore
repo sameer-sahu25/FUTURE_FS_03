@@ -6,6 +6,7 @@ dist/
 dist-ssr/
 *.log
 .vscode/
+
 .idea/
 .DS_Store
 Backend/node_modules/
